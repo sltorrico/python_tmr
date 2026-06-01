@@ -29,6 +29,7 @@ data/*_polars.parquet
 # OS/editor files
 .DS_Store
 .vscode/
+.devcontainer/devcontainer-lock.json
 
 /.quarto/
 **/*.quarto_ipynb
