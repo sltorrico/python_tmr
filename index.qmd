@@ -1,0 +1,24 @@
+---
+title: "Python Tools for Management Research"
+---
+
+This small site will collect rendered course slides as they are added. The
+repository remains the main home for notebooks, data, and project files.
+
+
+## Slides
+
+segment | topic | slides
+---|---|---
+0a | Python, notebooks, and the course workflow | [view](slides/0a.html)
+0b | Python basics I | [view](slides/0b.html)
+0c | Python basics II | [view](slides/0c.html)
+1a | Polars: read, inspect, transform, and write data | coming later
+1b | Polars: aggregation, joins, and research data workflows | coming later
+1c | Polars: reusable expressions, lazy queries, and project-scale patterns | coming later
+2a | Git and GitHub for research projects | coming later
+2b | Reproducible computing environments with devcontainers and Codespaces | coming later
+2c | Python project and environment management | coming later
+3a | Quarto documents, citations, and references | coming later
+3b | Quarto manuscripts with code-generated tables, figures, and results | coming later
+3c | Quarto presentations and other research outputs | coming later

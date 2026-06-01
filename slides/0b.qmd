@@ -1,0 +1,260 @@
+---
+title: "Python Tools for Management Research"
+subtitle: "0b: Python Basics I"
+author: "Jason T. Kiley"
+format:
+  revealjs:
+    theme: default
+    css: _style.css
+    slide-number: true
+    progress: true
+    controls: true
+    transition: fade
+    preview-links: true
+    highlight-style: github
+    code-copy: true
+    code-line-numbers: true
+    width: 1280
+    height: 720
+execute:
+  echo: true
+---
+
+
+## Python I
+
+::: {.big-claim}
+
+As a start, we'll learn to read, run, modify, and reason about small pieces of Python.
+
+:::
+
+This segment is about basic data types and built-in data structures.
+There's no need to memorize syntax; you'll find that you retain the stuff you use often and can look up the rest.
+
+
+## Python I
+
+:::: {.type-grid}
+
+::: {.type-card .green-left}
+
+[Object types]{.card-title}
+
+Strings, integers, floats, booleans, `None`, and dates.
+
+:::
+
+::: {.type-card}
+
+[Data structures]{.card-title}
+
+Lists and dictionaries.
+
+:::
+
+::: {.type-card .gold-left}
+
+[Learning habit]{.card-title}
+
+Run small examples, edit them, and observe the changes (if any).
+
+:::
+
+::::
+
+
+## Python objects
+
+Everything in Python is an object.
+
+Objects have attributes and methods that allow us to work with them.
+
+```{python}
+name = "Jason"
+name.lower()
+```
+
+
+## Assignment
+
+Variables in Python can be thought of as names we give to objects.
+
+```{python}
+project = "earnings-call-study"
+year = 2026
+
+print(project)
+print(year + 1)
+```
+
+Names point to objects, but they are distinct.
+As we'll see, an object can have no name, one name, or many names.
+In general, names let us refer to objects without recreating them.
+
+
+## What you already know
+
+You have likely worked with data type issues in existing stats software.
+
+- Stata often requires a format change for dates in datasets to be recognizable as dates.
+- You may have used `destring` to change a number represented as text into a numeric datatype.
+- Python is explicit about these distinctions, which seems pedantic until it becomes useful.
+
+
+## Integers
+
+Same as math: counting numbers, zero, and negatives.
+
+Integer literals are numbers without decimals.
+
+```{python}
+a = 2
+b = 3
+
+print(f"Addition:       {a + b}")
+print(f"Subtraction:    {a - b}")
+print(f"Multiplication: {a * b}")
+print(f"Exponentiation: {b ** a}")
+```
+
+Convert with `int()`.
+
+
+## Floating point numbers
+
+Any number with a decimal.
+
+Stored as an approximation, but it is rarely an issue for our use.
+
+```{python}
+price = 19.99
+growth = 1.23456e02
+
+print(price)
+print(growth)
+print(float("6.02"))
+```
+
+Scientific notation works, too. Convert with `float()`.
+
+
+## Ints and floats
+
+Ints can be added, subtracted, multiplied, and exponentiated.
+
+Anything with a float, or int division, returns a float.
+
+```{python}
+print(type(3 + 2))
+print(type(3 / 2))
+print(type(3 // 2))
+```
+
+
+## Strings
+
+~~One~~ *Zero* or more characters.
+
+That includes special characters like newlines.
+
+```{python}
+greeting = "Hello!"
+name = "Jason"
+
+print(f"{greeting} My name is {name}.")
+```
+
+Convert with `str()`.
+
+
+## Other common types
+
+:::: {.syntax-grid}
+
+::: {.syntax-card .green-left}
+
+[Boolean]{.card-title}
+
+`True` or `False`, often returned by comparisons.
+
+```{python}
+5 > 3
+```
+
+:::
+
+::: {.syntax-card .red-left}
+
+[None]{.card-title}
+
+A deliberate null value.
+
+Example: `result = None`
+
+:::
+
+::: {.syntax-card .gold-left}
+
+[Datetime]{.card-title}
+
+Dates, times, and differences between them.
+
+Example: `datetime.datetime.now()`
+
+:::
+
+::: {.syntax-card}
+
+[Package types]{.card-title}
+
+Packages add many more object types. We can also make our own, though that is mostly beyond our scope.
+
+:::
+
+::::
+
+
+## Lists
+
+Lists are data structures that contain a sequence of objects.
+
+They can contain many types of objects, though usually we use one main type at a time.
+
+```{python}
+tickers = ["msft", "aapl", "nvda"]
+
+print(tickers[0])
+print(tickers[:2])
+```
+
+
+## Dictionaries
+
+Dictionaries are data structures with key-value pairs.
+
+Keys must be unique and immutable.
+
+```{python}
+firm = {
+    "ticker": "msft",
+    "founding_year": 1975,
+}
+
+print(firm["ticker"])
+print(firm)
+```
+
+We often use dictionaries for lookups or as a lightweight representation of a row of data.
+
+
+## Hands-on
+
+Open `notebooks/0b_python1.ipynb`.
+
+
+## Summary
+
+- Python basic data types should be generally familiar.
+- Data structures like lists and dictionaries are an upgrade in functionality from most stats software.
+- The notebook is our practice surface: run code, change code, observe output, repeat.

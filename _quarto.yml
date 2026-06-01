@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - slides/0a.qmd
+    - slides/0b.qmd
+    - slides/0c.qmd
+
+website:
+  title: "Python Tools for Management Research"
+  navbar:
+    left:
+      - text: "Slides"
+        href: index.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: false

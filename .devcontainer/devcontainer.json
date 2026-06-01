@@ -1,0 +1,21 @@
+{
+    "name": "Python Tools for Management Research",
+    "image": "mcr.microsoft.com/devcontainers/python:3.13-trixie",
+    "features": {
+        "ghcr.io/rocker-org/devcontainer-features/quarto-cli:latest": {
+            "version": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "charliermarsh.ruff",
+                "quarto.quarto",
+                "tamasfe.even-better-toml"
+            ]
+        }
+    },
+    "postCreateCommand": "zsh ./.devcontainer/post_create.sh"
+}

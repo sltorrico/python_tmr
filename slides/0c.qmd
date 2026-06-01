@@ -1,0 +1,290 @@
+---
+title: "Python Tools for Management Research"
+subtitle: "0c: Python Basics II"
+author: "Jason T. Kiley"
+format:
+  revealjs:
+    theme: default
+    css: _style.css
+    slide-number: true
+    progress: true
+    controls: true
+    transition: fade
+    preview-links: true
+    highlight-style: github
+    code-copy: true
+    code-line-numbers: true
+    width: 1280
+    height: 720
+execute:
+  echo: true
+---
+
+
+## Python II
+
+::: {.big-claim}
+
+Functions, methods, and control structures let us create a procedure and reuse it.
+
+:::
+
+We're moving a bit closer to actual programming: define a small procedure, make decisions, and repeat work.
+It's sometimes instructive to contrast with physical terms: imagine a machine that could perfectly process an input, scale practically infinitely for relatively little cost, and have any part easily changed.
+
+
+## Overview
+
+:::: {.type-grid}
+
+::: {.type-card .green-left}
+
+[Functions]{.card-title}
+
+Input, procedure, return.
+
+:::
+
+::: {.type-card}
+
+[Methods]{.card-title}
+
+Functions attached to objects.
+
+:::
+
+::: {.type-card .gold-left}
+
+[Control structures]{.card-title}
+
+If-then statements and loops.
+
+:::
+
+::::
+
+
+## Functions and methods
+
+Much like math, functions are objects that take input and map that input to a particular output.
+
+In programming, we tend to refer to input as arguments, and output as returns.
+
+```{python}
+def f_to_c(temp_f):
+    return (temp_f - 32) * 5 / 9
+
+print(f_to_c(72))
+```
+
+There are many built in, and we can make our own.
+
+
+## Function parts
+
+```{.python code-line-numbers="1|2"}
+def f_to_c(temp_f):
+    return (temp_f - 32) * 5 / 9
+```
+
+:::: {.syntax-grid}
+
+::: {.syntax-card .green-left}
+
+[Definition]{.card-title}
+
+`def` creates the function and gives it a name.
+
+:::
+
+::: {.syntax-card}
+
+[Parameters]{.card-title}
+
+The parentheses define what input the function expects.
+
+:::
+
+::: {.syntax-card .gold-left}
+
+[Body]{.card-title}
+
+The indented block is the procedure to execute.
+
+:::
+
+::: {.syntax-card .red-left}
+
+[Return]{.card-title}
+
+`return` sends a value back to where the function was called.
+
+:::
+
+::::
+
+
+## Methods
+
+Remember that everything in Python is an object.
+
+Objects have methods, which are functions attached to objects and defined with their type in mind.
+
+```{python}
+c_string = "MY CAPS LOCK KEY IS BROKEN, APPARENTLY."
+
+print(c_string.lower())
+print(c_string.lower().replace("broken", "fixed"))
+```
+
+
+## Mutability
+
+Mutability describes whether objects themselves can be changed.
+
+This is different from changing the object that a name points to.
+
+:::: {.mutability-grid}
+
+::: {.code-note .green-left}
+
+[Basic types]{.card-title}
+
+Often immutable.
+
+Example: `text = text.lower()`
+
+:::
+
+::: {.code-note .gold-left}
+
+[Data structures]{.card-title}
+
+Often mutable.
+
+Example: `items.append("new")`
+
+:::
+
+::::
+
+
+## Mutability is about objects
+
+```{python}
+c_list = [1, 2, 3, 4]
+d_list = c_list
+
+c_list.append(5)
+
+print(c_list)
+print(d_list)
+print(c_list is d_list)
+```
+
+Both names point to the same object. If we need a separate list, we make a copy.
+
+```{python}
+d_list = c_list.copy()
+print(c_list is d_list)
+```
+
+
+## Control structures
+
+Control structures allow code to make decisions and repeat procedures.
+
+```{python}
+a = 5
+
+if a > 5:
+    print("a is greater than five.")
+elif a == 5:
+    print("a is exactly five.")
+else:
+    print("a is something else.")
+```
+
+
+## Indentation matters
+
+In Python, spacing is part of the syntax.
+
+```{python}
+if a > 4:
+    print("This is inside the if statement.")
+print("This prints either way.")
+```
+
+In some other languages, code blocks use braces. Python uses indentation.
+
+
+## While loops
+
+While some condition is true, do something.
+
+The condition needs to somehow become false, or this will run forever.
+
+```{python}
+b = 1
+while b < 5:
+    print(f"b is {b}")
+    b = b + 1
+```
+
+
+## For loops
+
+For each item in some sequence, do something.
+
+This has a natural end point, unlike the more general `while` loop.
+
+```{python}
+for num in [1, 2, 3, 4, 5]:
+    print(num + 1)
+```
+
+
+## Convenience syntax
+
+We often use the same control structures in the same ways.
+
+Language designers sometimes give us syntax that makes common patterns easier.
+
+```{python}
+e_list = ["THIS", "LIST", "HAS", "ITEMS", "IN", "CAPS"]
+
+new_list = []
+for item in e_list:
+    new_list.append(item.lower())
+
+print(new_list)
+```
+
+```{python}
+[item.lower() for item in e_list]
+```
+
+
+## Hands-on
+
+Open `notebooks/0c_python2.ipynb`.
+
+
+## Summary
+
+- Functions and methods let us take a procedure and give it a name.
+- Mutability is sometimes tricky, but basic types are generally immutable and data structures are generally mutable.
+- Control structures allow code to make decisions and repeat procedures.
+
+
+## End of the day
+
+::: {.big-claim}
+
+You now know all of the basics of programming. (Whoa!)
+
+:::
+
+The core set of things that we need to do to write computations is surprisingly short.
+There's a lot beyond this, but it's about efficiency, productivity, convenience, and style.

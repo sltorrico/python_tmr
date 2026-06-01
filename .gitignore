@@ -1,0 +1,34 @@
+# Local reference and planning files
+AGENTS.md
+_reference/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Notebook and Quarto output
+*_files/
+.quarto/
+_site/
+*.html
+*.pdf
+data/*_polars.csv
+data/*_polars.parquet
+
+# Slides and document exports
+*.key
+*.pptx
+*.zip
+
+# OS/editor files
+.DS_Store
+.vscode/
+
+/.quarto/
+**/*.quarto_ipynb

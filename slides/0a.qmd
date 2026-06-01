@@ -1,0 +1,239 @@
+---
+title: "Python Tools for Management Research"
+subtitle: "0a: Python, Notebooks, and the Course Workflow"
+author: "Jason T. Kiley"
+format:
+  revealjs:
+    theme: default
+    css: _style.css
+    slide-number: true
+    progress: true
+    controls: true
+    transition: fade
+    preview-links: true
+    highlight-style: github
+    width: 1280
+    height: 720
+---
+
+
+## The key
+
+::: {.big-claim}
+
+Python and the tools we use let us make our workflows into research evidence.
+
+:::
+
+We are learning a carefully curated subset of Python to use modern research tools to get reproducible results, verifiable procedures, and sharable artifacts.
+
+
+## Course path
+
+:::: {.columns}
+
+::: {.column .course-card width="25%"}
+
+
+### Day 0
+
+**Python foundations**
+
+Notebooks, Markdown, basic syntax, and the first working habits.
+
+:::
+
+::: {.column .course-card width="25%"}
+
+
+### Day 1
+
+**Polars**
+
+Read, inspect, transform, and save research data.
+
+:::
+
+::: {.column .course-card width="25%"}
+
+
+### Day 2
+
+**Projects**
+
+Git, GitHub, Codespaces, and environment management.
+
+:::
+
+::: {.column .course-card width="25%"}
+
+
+### Day 3
+
+**Quarto outputs**
+
+Documents, manuscripts, slides, and code-generated results.
+
+:::
+
+::::
+
+
+## Why Python?
+
+- **Approachability:** Python is a well-designed modern language that handles a lot for us.
+- **Features:** many useful tools are already built, so we often glue pieces together.
+- **Learning resources:** wide use gives us extensive documentation, examples, and help.
+- **Scalability:** similar workflows can move from a laptop, to the cloud, to a computing cluster.
+
+
+## What do you really need to know?
+
+:::: {.columns}
+
+::: {.column .plain-card .core-card width="50%"}
+
+
+### Basics
+
+Core focus: Python interpreter, notebooks, variables, strings, numbers, lists,
+dictionaries, packages, and documentation.
+
+:::
+
+::: {.column .plain-card .core-card width="50%"}
+
+
+### Data Preparation
+
+Core focus: reading data, inspecting structure, transforming columns, merging,
+querying, and writing results.
+
+:::
+
+::::
+
+:::: {.columns}
+
+::: {.column .plain-card .support-card width="50%"}
+
+
+### Good-enough Programming
+
+Supporting focus: functions, loops, reusable patterns, readable code, and
+handling errors without panic.
+
+:::
+
+::: {.column .plain-card .warning-card width="50%"}
+
+
+### Software Engineering
+
+Warning sign: useful, but lower ROI for most research workflows.
+
+Examples: classes and inheritance, package development, testing and continuous integration, cross-version support, open-source contributions.
+
+:::
+
+::::
+
+
+## Compared with familiar tools
+
+:::: {.columns}
+
+::: {.column .tool-card .excel-card width="50%"}
+
+
+### Excel
+
+- Can destroy data, such as Twitter IDs.
+- Slows considerably with otherwise small datasets.
+- Leaves no great audit trail on changes.
+
+:::
+
+::: {.column .tool-card .python-card width="50%"}
+
+
+### Stats packages and R
+
+- Stata (for example) is great at modeling and not much else.
+- R is also great at modeling, though less versatile than Python.
+- Python shines as general-purpose glue around data, automation, and outputs.
+
+:::
+
+::::
+
+
+## Why environments matter
+
+Packages are tools. Research projects need the right tools, in compatible
+versions, kept together with the project.
+
+We use devcontainers and environments as recipes that we can ship with the
+project, so we can reproduce the computing environment later, on another computer, or for a coauthor.
+
+
+## The course environment
+
+GitHub Codespaces gives everyone the same working environment in the browser.
+
+The devcontainer defines the Python version, Quarto, VS Code extensions, and
+course packages as project infrastructure rather than one-off setup steps.
+
+That matters for research because things change: coauthor writing code or verifying results, another computer, new computer, OS upgrade, and so on.
+
+
+## Why notebooks?
+
+:::: {.columns}
+
+::: {.column .plain-card width="50%"}
+
+
+### What they hold
+
+- Reference
+- Narrative
+- Procedure
+- Output
+- Good-enough sharing
+
+:::
+
+::: {.column .plain-card width="50%"}
+
+
+### Why that helps
+
+The explanation, code, and results live near each other. That makes the notebook
+useful for planning, decision-making, doing, outputting, and sharing.
+
+:::
+
+::::
+
+
+## Errors are information {.smaller}
+
+
+Programming languages are very literal. They attempt to evaluate exactly what
+we give them.
+
+> The best part is that they do exactly what we say.
+> The worst part is that they do exactly what we say.
+
+
+```text
+NameError: name 'polarz' is not defined
+```
+
+It's fine. They make us resolve ambiguity, and they tell us exactly what is wrong. We can read the error, fix it, and move on. And repeat. A lot.
+
+
+## Hands-on
+
+Open `notebooks/0a_intro.ipynb`.
